@@ -1,27 +1,21 @@
 import React from "react"
 import { useState } from "react"
+import Counter from "./components/counter"
+import ClassCounter from "./components/classCounter"
 
 function App() {
-    const [count, setCount] = useState(0)
-    const [value, setValue] = useState('')
-    console.log(value);
-    console.log(count);
-
-    function inc() {
-        setCount(count + 1)
-    }
-
-    function dec() {
-        setCount(count - 1)
-    }
+    const [value, setValue] = useState("")
 
     return (
         <div className="App">
-            <header>{count}</header>
             <h1>{value}</h1>
-            <input type="text" value={value} onChange={event => setValue(event.target.value)}/>
-            <button onClick={inc}>++</button>
-            <button onClick={dec}>--</button>
+            <input
+                type="text"
+                value={value}
+                onChange={(event) => setValue(event.target.value)}
+            />
+            <Counter></Counter>
+            <ClassCounter></ClassCounter>
         </div>
     )
 }
