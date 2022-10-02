@@ -1,6 +1,6 @@
 import React from "react"
 
-class ClassCounter extends React.Component {
+class Counter extends React.Component {
     constructor(props) {
         super(props)
 
@@ -9,11 +9,11 @@ class ClassCounter extends React.Component {
         }
     }
 
-    inc() {
+    inc = () => {
         this.setState({ count: this.state.count + 1 })
     }
 
-    dec() {
+    dec = () => {
         this.setState({ count: this.state.count - 1 })
     }
 
@@ -21,11 +21,11 @@ class ClassCounter extends React.Component {
         return (
             <div>
                 <h1>{this.state.count}</h1>
-                <button onClick={this.inc}>++</button>
-                <button onClick={this.dec}>--</button>
+                <button onClick={this.dec}>-</button>
+                <button onClick={this.inc}>+</button>
             </div>
         )
     }
 }
 
-export default ClassCounter
+export default Counter
