@@ -7,8 +7,13 @@
     background: var(--color-selection);
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Montserrat, sans-serif;
+    margin: 0;
 }
 
 .container {
@@ -18,22 +23,28 @@ body {
 
 .content {
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 550px;
 }
 
 .slow-text {
+    overflow: auto;
+    height: 100vh;
+}
+
+.slow-text__inner {
+    max-height: 100vh;
+    padding: 0 20px;
     text-align: justify;
 }
 
 .slow-text span {
     opacity: 0;
-    font-size: 0;
+    font-size: 16px;
     transition: opacity .5s ease;
 }
 
 .slow-text span.is-visible {
     opacity: 1;
-    font-size: 16px;
 }
 
 .play {
