@@ -1,4 +1,4 @@
-class SlowReading {
+class Reader {
     constructor(selector) {
         this.selector = selector
         this.wordIndex = 0
@@ -7,6 +7,7 @@ class SlowReading {
         this.activeReading = false
         this.factorPlus = 0
         this.factorMinus = 0
+        this.maxFactor = 10
         this.wordsDomArray = Array.from(
             document.querySelectorAll(`${this.selector} span`)
         )
@@ -21,7 +22,7 @@ class SlowReading {
             )
         }
 
-        const randomTime = 1.2 + Math.random() * 500
+        const randomTime = 500 // + Math.random() * 500
 
         setTimeout(() => {
             // console.log(randomTime)
@@ -67,7 +68,7 @@ class SlowReading {
         }
 
         if (this.wordIndex < this.wordsDomArray.length) {
-            this.factorPlus++
+            this.factorPlus = Math.min(this.maxFactor, ++this.factorPlus)
         }
     }
 
@@ -94,7 +95,7 @@ class SlowReading {
             )
         }
 
-        this.factorMinus++
+        this.factorMinus = Math.min(this.maxFactor, ++this.factorMinus)
     }
 
     allowScroll = () => {
@@ -137,4 +138,4 @@ class SlowReading {
     }
 }
 
-export default SlowReading
+export default Reader
