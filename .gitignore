@@ -28,5 +28,4 @@ yarn-error.log*
 .env.build
 .vercel
 
-#swift-reader
-/**/swift_reader_still
+~*

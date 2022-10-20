@@ -1,41 +1,37 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Menu from "./components/menu/Menu";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Text from "./pages/Text";
+import RandomQuote from "./pages/RandomQuote";
+import TextRandom from "./pages/TextRandom";
+// import Tasker from "./pages/Tasker";
+import Nasa from "./pages/Nasa";
 
 import "./styles/App.css";
+import Container from '@mui/material/Container';
 
 function App() {
     return (
         <div className="App">
-            <div className="container">
+            <Container>
                 <div className="content">
                     <BrowserRouter>
-                        <nav className="nav">
-                            <ul>
-                                <li className="nav-item">
-                                    <Link to="/">Home</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to="/text">Text</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link to="/about">About</Link>
-                                </li>
-                            </ul>
-                        </nav>
+                        <Menu></Menu>
                         <Routes>
                             <Route path="/">
                                 <Route index element={<Home />} />
-                                <Route path="text" element={<Text />} />
+                                <Route path="text" element={<RandomQuote />} />
+                                <Route path="text-random" element={<TextRandom />} />
+                                <Route path="nasa" element={<Nasa />} />
+                                {/* <Route path="/tasker" element={<Tasker />} /> */}
                                 <Route path="about" element={<About />} />
                             </Route>
                         </Routes>
                     </BrowserRouter>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }

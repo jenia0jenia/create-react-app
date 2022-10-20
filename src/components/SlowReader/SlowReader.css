@@ -1,0 +1,52 @@
+.reader {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.slow-reader {
+    flex-wrap: nowrap;
+}
+.slow-reader-inner {
+    padding: 10px;
+    position: relative;
+    border: 1px solid rgba(25, 118, 210, 0.5);
+    border-radius: 5px;
+}
+.slow-reader-words {
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+    padding: 15px 5px;
+}
+
+.slow-reader span {
+    opacity: 0;
+    font-size: 16px;
+    transition: opacity 0.5s ease;
+}
+
+.slow-reader span.is-visible {
+    opacity: 1;
+}
+
+.Button.slow-reader-play {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(0, -40px);
+    opacity: 0.3;
+    transition: opacity 0.2s ease;
+}
+
+.slow-reader-play:active {
+    transform: scale(0.9);
+}
+
+.slow-reader-play:focus {
+    outline: 0;
+}
+
+.slow-reader-play:hover {
+    opacity: 1;
+}

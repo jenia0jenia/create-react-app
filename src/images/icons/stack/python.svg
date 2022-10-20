@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+<g>
+<path d="m300 190h-180s-50 0-50 110 50 110 50 110h50v-50c0-40 30-70 70-70h119.93c30.066 0 50.066-20 50.48-50.48 0.4139-30.48-0.41391-119.52-0.41391-119.52s0-50-110-50-110 50-110 50v50h110z" fill="#387eb8"/>
+<path d="m300 410h180s50 0 50-110-50-110-50-110h-50v50c0 40-30 70-70 70h-120c-30 0-50 20-50 50v120s0 50 110 50 110-50 110-50v-50h-110z" fill="#ffc331"/>
+<circle cx="240" cy="120" r="20" fill="#fff"/>
+<circle cx="360" cy="480" r="20" fill="#fff"/>
+</g>
+<g display="none">
+<path d="m120 180s-60 0-60 120 60 120 60 120h60v-60c0-30 20-60 60-60h120c40 0 59.586-29.52 60-60 0.4139-30.48 0-120 0-120s0.99338-58.94-120-60-120 60-120 60v60z" display="inline" fill="#387eb8"/>
+<path d="m480 420s61.792-12.056 60.927-122.05c-0.92715-117.95-60.927-117.95-60.927-117.95h-60v60c0 30-20 60-60 60h-120c-40 0-60 30-60 60v120s10 59.746 120 59.868c120 0.13245 120-59.868 120-59.868v-60z" display="inline" fill="#ffc331"/>
+</g>
+<g display="none">
+<path d="m180 180v-60s0-60 120-60 120 60 120 60v120c0 40-30 60-60 60h-120c-30 0-60 20-60 60v120s0 60 120 60 120-60 120-60v-60" fill="none" stroke="#0f0" stroke-width="20"/>
+<path d="m300 180h-180s-60 0-60 120 60 120 60 120h60" fill="none" stroke="#0f0" stroke-width="20"/>
+<path d="m420 180h60s60 0 60 120-60 120-60 120h-180" fill="none" stroke="#00fe00" stroke-width="20"/>
+<circle cx="240" cy="120" r="20" fill="#0f0"/>
+<circle cx="360" cy="480" r="20" fill="#0f0"/>
+</g>
+<g display="none" stroke="#000" stroke-width=".6">
+<path d="m30 60h540"/>
+<path d="m150 120h300"/>
+<path d="m30 180h540"/>
+<path d="m330 240h120" display="inline"/>
+<path d="m30 300h540"/>
+<path d="m150 360h120" display="inline"/>
+<path d="m30 420h540"/>
+<path d="m150 480h300"/>
+<path d="m30 540h540"/>
+<path d="m60 30v540"/>
+<path d="m120 450v-300"/>
+<path d="m180 30v540"/>
+<path d="m240 30v180"/>
+<path d="m240 270v120" display="inline"/>
+<path d="m300 30v540"/>
+<path d="m360 210v120" display="inline"/>
+<path d="m360 390v180"/>
+<path d="m420 30v540"/>
+<path d="m480 450v-300"/>
+<path d="m540 30v540"/>
+</g>
+</svg>
