@@ -32,7 +32,7 @@ export default function Home() {
                             wpm: 100,
                             minHeight: false,
                             border: false,
-                            text: "it specialist, web programmer, full-stack devaloper",
+                            text: "it specialist, web programmer, full-stack developer",
                         }}
                     ></SlowReader>
                 </Typography>
