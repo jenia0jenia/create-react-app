@@ -1,12 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Menu from "./components/menu/Menu";
+import Menu from "./components/Menu/Menu";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import RandomQuote from "./pages/RandomQuote";
 import TextRandom from "./pages/TextRandom";
-// import Tasker from "./pages/Tasker";
 import Nasa from "./pages/Nasa";
 
 import "./styles/App.css";

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ES6",
+      "DOM"
+    ],
+    "baseUrl": "src",
+    "noImplicitAny": false,
+    "moduleResolution": "Node",
+    "noImplicitUseStrict": true,
+    "sourceMap": false,
+    "removeComments": false,
+    "esModuleInterop": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src"
+  ]
+}

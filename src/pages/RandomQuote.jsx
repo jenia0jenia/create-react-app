@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { SlowReader } from "../components/SlowReader";
+import SlowReader from "../components/SlowReader/SlowReader";
 import quotes from "../api/quotes";
 // import Button from "@mui/material/Button";
 
@@ -9,7 +9,7 @@ export default function Text() {
         showSettings: true,
         showPauseButtonOnText: false,
         border: true,
-        wpm: 300,
+        wpm: 200,
         text: "",
     });
     const [enableNewQuote, setEnable] = useState(true);

@@ -1,59 +1,69 @@
+interface IUserSettings {
+    text?: string;
+    wpm?: number;
+}
+
 class Reader {
-    constructor(selector) {
-        this.selector = selector;
-        this.activeClass = "is-visible";
-        this.activeScroll = false;
-        this.activeReading = false;
-        this.factorPlus = 0;
-        this.factorMinus = 0;
-        this.maxFactor = 10;
-        this.wpmFactor = 100;
-        this.wordsDomArray = Array.from(
+    activeClass: string = "is-visible";
+    activeScroll: boolean = false;
+    activeReading: boolean = false;
+    factorPlus: number = 0;
+    factorMinus: number = 0;
+    maxFactor: number = 10;
+    wpmFactor: number = 100;
+    wordIndex: number = 0;
+    wpm: number = 200;
+    words: Element[];
+    text: string = "";
+    delay: number = 1000;
+
+    constructor(readonly selector: string) {
+        this.words = Array.from(
             document.querySelectorAll(`${this.selector} span`)
         );
+
+        this.delay = 100 * this.wpm / 60;
     }
 
-    setSettings(settings) {
+    setSettings(settings: IUserSettings): void {
         if (settings.text) {
-            for (const set in settings) {
-                if (set === 'text') {
-                    this.start()
-                }
-
-                this[set] = settings[set]
-            }
+            this.text = settings.text;
         }
-        
-        this.wpm = settings.wpm ? settings.wpm : 500;
+
+        if (settings.wpm) {
+            this.wpm = settings.wpm;
+        }
     }
 
-    start() {
-        this.reset()
-
-        if (this.wordsDomArray.length <= 0) {
-            this.wordsDomArray = Array.from(
+    start(): void {
+        if (this.words.length === 0) {
+            this.words = Array.from(
                 document.querySelectorAll(`${this.selector} span`)
             );
         }
-        this.activeReading = true
-        this.reading()
+        this.activeReading = true;
+        this.reading();
     }
     
-    reading() {
-
-        let delay = (1 / (this.wpm / 60)) * 1000;
+    /**
+     * ()
+     */
+    reading(): void {
+        
+        this.delay = 100 * this.wpm / 60;
+        console.log(this.delay);
 
         setTimeout(() => {
             if (this.activeReading) {
                 this.showWordsOneByOne();
-    
-                if (this.wordIndex < this.wordsDomArray.length) {
+
+                if (this.wordIndex < this.words.length) {
                     this.reading();
                 } else {
                     this.activeReading = false;
                 }
             }
-        }, delay);
+        }, this.delay);
     }
 
     showWordsOneByOne() {
@@ -61,10 +71,8 @@ class Reader {
             this.wordIndex = 0;
         }
 
-        if (this.wordIndex < this.wordsDomArray.length) {
-            this.wordsDomArray[this.wordIndex++].classList.add(
-                this.activeClass
-            );
+        if (this.wordIndex < this.words.length) {
+            this.words[this.wordIndex++].classList.add(this.activeClass);
         }
     }
 
@@ -78,16 +86,14 @@ class Reader {
         }
 
         while (this.wordIndex < toPos + this.factorPlus) {
-            if (this.wordIndex >= this.wordsDomArray.length) {
+            if (this.wordIndex >= this.words.length) {
                 break;
             }
 
-            this.wordsDomArray[this.wordIndex++].classList.add(
-                this.activeClass
-            );
+            this.words[this.wordIndex++].classList.add(this.activeClass);
         }
 
-        if (this.wordIndex < this.wordsDomArray.length) {
+        if (this.wordIndex < this.words.length) {
             this.factorPlus = Math.min(this.maxFactor, ++this.factorPlus);
         }
     }
@@ -105,14 +111,12 @@ class Reader {
                 break;
             }
 
-            if (this.wordIndex >= this.wordsDomArray.length) {
+            if (this.wordIndex >= this.words.length) {
                 this.wordIndex--;
                 continue;
             }
 
-            this.wordsDomArray[this.wordIndex--].classList.remove(
-                this.activeClass
-            );
+            this.words[this.wordIndex--].classList.remove(this.activeClass);
         }
 
         this.factorMinus = Math.min(this.maxFactor, ++this.factorMinus);
@@ -143,20 +147,20 @@ class Reader {
         this.wordIndex = 0;
         this.activeReading = false;
 
-        if (this.wordsDomArray.length) {
-            this.wordsDomArray.forEach((span) => {
-                span.classList.remove(
-                    this.activeClass
-                );
-            })
+        if (this.words.length) {
+            this.words.forEach((span) => {
+                span.classList.remove(this.activeClass);
+            });
         }
 
-        this.wordsDomArray = Array.from(
+        this.words = Array.from(
             document.querySelectorAll(`${this.selector} span`)
         );
     }
 
-    toggle = (e) => {
+    toggle = (e): void => {
+        console.log(e);
+
         if (
             e.target.classList.contains("play") ||
             e.key === " " ||

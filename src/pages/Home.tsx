@@ -9,8 +9,8 @@ import {
     Box,
 } from "@mui/material";
 
-import ListItemProgress from "../components/ui/ListItemProgress.jsx";
-import { SlowReader } from "../components/SlowReader";
+import ListItemProgress from "../components/ui/ListItemProgress";
+import SlowReader from "../components/SlowReader/SlowReader";
 
 import stackList from "../data/stackList.js";
 
@@ -24,12 +24,12 @@ export default function Home() {
                     bgcolor: "background.paper",
                 }}
             >
-                <Typography>
+                <Typography component={"div"}>
                     <SlowReader
                         id="slow-reader-home"
                         settings={{
                             showSettings: false,
-                            wpm: 100,
+                            wpm: 300,
                             minHeight: false,
                             border: false,
                             text: "it specialist, web programmer, full-stack developer",

@@ -1,4 +1,4 @@
-import { SlowReader } from "../components/SlowReader";
+import SlowReader from "../components/SlowReader/SlowReader";
 import text from "../data/text3";
 import Grid from "@mui/material/Grid";
 import { shuffleArray } from "../helpers/helpers";
@@ -13,7 +13,7 @@ export default function RandomQuote() {
                     <SlowReader
                         id={`slow-reader-${i}`}
                         settings={{
-                            wpm: 300 + Math.random() * 500,
+                            wpm: 200 + Math.random() * 500,
                             text,
                         }}
                     ></SlowReader>

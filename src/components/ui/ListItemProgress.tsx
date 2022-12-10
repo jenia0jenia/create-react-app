@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 export default function ListItemProgress({ progress, color }) {
     const [pr, setProgress] = useState(0);

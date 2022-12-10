@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import Reader from "../../utils/text/reader";
+import { useEffect } from "react";
+import Reader from "utils/reader";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Slider from "@mui/material/Slider";
@@ -8,8 +8,8 @@ import PropTypes from "prop-types";
 
 import "./SlowReader.css";
 
-function SlowReader({ id, settings, children }) {
-    const reader = new Reader(`#${id}`);
+function SlowReader({ id, settings }) {
+    const reader: Reader = new Reader(`#${id}`);
     // const ref = useRef();
 
     useEffect(() => {
@@ -26,14 +26,13 @@ function SlowReader({ id, settings, children }) {
 
     function onChangeWpm(event) {
         reader.setSettings({
-            wpm: +event.target.value || 100,
+            wpm: +event.target.value || 300,
         });
     }
 
     return (
         id && (
             <div>
-                <div>{children}</div>
                 <Grid container spacing={2}>
                     <Grid
                         id={id}
@@ -50,7 +49,7 @@ function SlowReader({ id, settings, children }) {
                             <div className="slow-reader-words" style={{
                                 minHeight: settings.minHeight || 'none'
                             }}>
-                                {settings.text.split(" ").map((word, i) => (
+                                {settings.text && settings.text.split(" ").map((word, i) => (
                                     <span key={i} data-word-index={i}>
                                         {word}{" "}
                                     </span>
@@ -77,7 +76,7 @@ function SlowReader({ id, settings, children }) {
                                     defaultValue={settings.wpm}
                                     min={100}
                                     step={25}
-                                    max={2000}
+                                    max={600}
                                     aria-label="Default"
                                     valueLabelDisplay="auto"
                                     onChange={onChangeWpm}
@@ -102,4 +101,4 @@ SlowReader.propType = {
     id: PropTypes.string.isRequired,
 };
 
-export { SlowReader };
+export default SlowReader;

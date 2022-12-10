@@ -29,3 +29,9 @@ yarn-error.log*
 .vercel
 
 ~*
+
+/src/components/**/*.js
+~/src/components/**/index.js
+
+/src/pages/**/*.js
+~/src/pages/**/index.js

@@ -1,4 +1,4 @@
-import Icons from "../components/Icons.jsx";
+import Icons from "../components/Icons";
 
 const stackList = [
     {
