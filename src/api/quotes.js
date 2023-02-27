@@ -4,6 +4,7 @@ const quotes = {
     header: {
         "Content-Type": "application/json",
         "Authorization": "Token token=5196ebbe106946d10098bdb8e17ab074",
+        
     },
 };
 

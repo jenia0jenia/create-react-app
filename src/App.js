@@ -17,7 +17,7 @@ function App() {
             <Container>
                 <div className="content">
                     <BrowserRouter>
-                        <Menu></Menu>
+                        {/* <Menu></Menu> */}
                         <Routes>
                             <Route path="/">
                                 <Route index element={<Home />} />

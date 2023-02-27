@@ -3,6 +3,9 @@ interface IUserSettings {
     wpm?: number;
 }
 
+/**
+ * 
+ */
 class Reader {
     activeClass: string = "is-visible";
     activeScroll: boolean = false;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import LinearProgress from "@mui/material/LinearProgress";
 // import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
@@ -20,13 +20,13 @@ function LinearProgressWithLabel(props) {
     );
 }
 
-LinearProgressWithLabel.propTypes = {
-    /**
-     * The value of the progress indicator for the determinate and buffer variants.
-     * Value between 0 and 100.
-     */
-    value: PropTypes.number.isRequired,
-};
+// LinearProgressWithLabel.propTypes = {
+//     /**
+//      * The value of the progress indicator for the determinate and buffer variants.
+//      * Value between 0 and 100.
+//      */
+//     value: PropTypes.number.isRequired,
+// };
 
 export default function LinearWithValueLabel(props) {
     const [progress, setProgress] = useState(0);

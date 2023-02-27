@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 import "./SlowReader.css";
 
@@ -97,8 +97,8 @@ function SlowReader({ id, settings }) {
     );
 }
 
-SlowReader.propType = {
-    id: PropTypes.string.isRequired,
-};
+// SlowReader.propType = {
+//     id: PropTypes.string.isRequired,
+// };
 
 export default SlowReader;
